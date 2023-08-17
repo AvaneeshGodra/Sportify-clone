@@ -2,15 +2,7 @@ import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Slider from '@mui/material/Slider';
-import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
-import PauseRounded from '@mui/icons-material/PauseRounded';
-import PlayArrowRounded from '@mui/icons-material/PlayArrowRounded';
-import FastForwardRounded from '@mui/icons-material/FastForwardRounded';
-import FastRewindRounded from '@mui/icons-material/FastRewindRounded';
-import VolumeUpRounded from '@mui/icons-material/VolumeUpRounded';
-import VolumeDownRounded from '@mui/icons-material/VolumeDownRounded';
+import { Button } from '@mui/material';
 
 const WallPaper = styled('div')({
   position: 'absolute',
@@ -126,16 +118,16 @@ export default function Player({fn,song}) {
                 Your browser does not support the audio element
             </audio>
             </div>
+            <Button onClick={()=>{
+                fn(false,null)
+            }}variant="contained">BACK</Button>
+    
         
       </Widget>
       <WallPaper />
     </Box>
   );
 }
-
-
-
-
 
 
 // import { Button } from '@mui/material'
