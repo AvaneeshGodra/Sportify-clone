@@ -10,18 +10,18 @@ const Song = ({fn,song}) => {
 
   return (
     <>
-      <div class="container text-center">
-  <div class="row ">
-    <div class="col-4 mt-2">
+      <div className="container text-cente card" id='bg'>
+      <div className="row mt-2 ">
+    <div className="col-4 mt-2">
       <img src={song.artworkUrl100}/>
 
     </div>
-    <div class="col-4">
-    <p>{song.artistName}</p> 
-    <p>{song.trackName}</p>
+    <div className="col-4">
+    <p>Artist Name:<h6> {song.artistName}</h6></p> 
+    <p> Song Name :<h6> {song.trackName}</h6></p>
     </div>
-    <div class="col-4">
-    <Button onClick={showPlayer} variant="contained">play</Button>
+    <div className="col-4">
+    <Button className='mt-5'onClick={showPlayer} variant="contained">play</Button>
     </div>
   </div>
 </div>

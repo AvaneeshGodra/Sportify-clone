@@ -3,7 +3,6 @@ import Search from '../Components/Search'
 import Songs from '../Components/Songs.jsx'
 import { getSongs } from '../../../shared/services/api-client'
 import Player from '../Components/Player'
-import Header from '../../../shared/components/Header'
 import { styled, useTheme } from '@mui/material/styles';
 
 const WallPaper = styled('div')({
@@ -67,6 +66,7 @@ const SearchPage = () => {
     setPlayerSong(songvar);
     setFlag(flag);
   }
+  
  const jsx=<>
   
   <Search fn={getArtistName}/>                

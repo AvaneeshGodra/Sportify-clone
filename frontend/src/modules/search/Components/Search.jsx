@@ -1,8 +1,7 @@
 import React from 'react'
 import Button from '@mui/material/Button';
 import { useRef } from 'react';
-import { TextField } from '@mui/material';
-
+import Appcss from '../../../App.css'
 
 const Search = ({fn}) => {
 
@@ -13,7 +12,7 @@ const Search = ({fn}) => {
   }
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg " id='bar'>
           <a className="navbar-brand" href="#">SPOTIFY</a>
           
 

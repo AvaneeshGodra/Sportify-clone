@@ -83,6 +83,18 @@ export default function Player({fn,song}) {
   const lightIconColor =
     theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)';
   return (
+   <>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
     <Box sx={{ width: '100%', overflow: 'hidden' }}>
       <Widget>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -91,10 +103,10 @@ export default function Player({fn,song}) {
           </CoverImage>
           <Box sx={{ ml: 1.5, minWidth: 0 }}>
             <Typography variant="caption" color="text.secondary" fontWeight={500}>
-            {song.artistName}
+             {song.artistName}
             </Typography>
             <Typography variant="caption" color="text.secondary" fontWeight={500}>
-            {song.trackName}
+             {song.trackName}
             </Typography>
             
             
@@ -120,14 +132,17 @@ export default function Player({fn,song}) {
             </div>
             <Button onClick={()=>{
                 fn(false,null)
-            }}variant="contained">BACK</Button>
+            }}variant="contained">Back</Button>
     
         
       </Widget>
       <WallPaper />
     </Box>
-  );
-}
+  
+  </>
+  )}
+
+
 
 
 // import { Button } from '@mui/material'
