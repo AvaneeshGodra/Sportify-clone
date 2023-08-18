@@ -12,7 +12,7 @@ const Search = ({fn}) => {
   }
   return (
     <>
-      <nav className="navbar navbar-expand-lg " id='bar'>
+      <nav className="navbar navbar-expand rounded " id='bar'>
           <a className="navbar-brand" href="#">SPOTIFY</a>
           
 

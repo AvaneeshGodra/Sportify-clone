@@ -37,8 +37,11 @@
   }
 }
 #bg{
-  background-color:#F6F4EB;
+  background-color:#D8D9DA;
 }
 #bar{
-  background-color: #91C8E4;
+  background-color: #A8DF8E;
+}
+.App-text{
+  text-emphasis-color: white;
 }
