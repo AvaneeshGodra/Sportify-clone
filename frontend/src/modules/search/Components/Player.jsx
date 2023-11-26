@@ -70,6 +70,7 @@ const TinyText = styled(Typography)({
 });
 
 export default function Player({fn,song}) {
+
   const theme = useTheme();
   const duration = 200; // seconds
   const [position, setPosition] = React.useState(32);
@@ -84,6 +85,7 @@ export default function Player({fn,song}) {
     theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)';
   return (
    <>
+   
     <br />
     <br />
     <br />
@@ -113,14 +115,10 @@ export default function Player({fn,song}) {
           </Box>
         </Box>
        
-        <Box
-          
-        >
+        <Box>
           
         </Box>
-        <Box
-          
-        >
+        <Box>
           
           
         </Box>
@@ -133,41 +131,8 @@ export default function Player({fn,song}) {
             <Button onClick={()=>{
                 fn(false,null)
             }}variant="contained">Back</Button>
-    
-        
       </Widget>
       <WallPaper />
     </Box>
-  
   </>
   )}
-
-
-
-
-// import { Button } from '@mui/material'
-// import React from 'react'
-
-
-// const Player = ({fn,song}) => {
-//   return (
-//     <>
-//         <nav className="navbar navbar-expand-lg bg-body-tertiary">
-//           <a className="navbar-brand" href="#">SPOTIFY</a>
-
-//           <Button onClick={()=>{
-//         fn(false,null)
-//     }}variant="contained">BACK</Button>
-//     {/* {song.artistName} */}
-        
-//       </nav>      
-    
-//     <audio controls>
-//         <source src={song?.previewUrl} type="audio/mp4"/>
-//         Your browser does not support the audio element
-//     </audio>
-//     </>
-//   )
-// }
-
-// export default Player

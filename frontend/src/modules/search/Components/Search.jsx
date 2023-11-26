@@ -1,32 +1,74 @@
-import React from 'react'
-import Button from '@mui/material/Button';
-import { useRef } from 'react';
-import Appcss from '../../../App.css'
+import React from 'react';
+import search from '../../../../src/search-alt-2-svgrepo-com.svg';
 
-const Search = ({fn}) => {
+const Search = ({ fn }) => {
+  const artist = React.useRef();
 
-  const artist=useRef();  //just like pointer . stores the reference . it is a hook (use)
-
-  const clicked=()=>{
+  const clicked = () => {
     fn(artist.current.value);
-  }
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      clicked();
+    }
+  };
+
   return (
-    <>
-      <nav className="navbar navbar-expand rounded " id='bar'>
-          <a className="navbar-brand" href="#">SPOTIFY</a>
-          
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '20px 20%', // Adjust padding as needed
+      }}
+    >
+      <div
+        className="input-container"
+        style={{
+          width: '100%',
+          maxWidth: '400px', // Adjust the maximum width as needed
+          position: 'relative',
+        }}
+      >
+        <input
+          ref={artist}
+          type="text"
+          name="text"
+          className="input"
+          placeholder="Search..."
+          style={{
+            width: '100%',
+            height: '40px',
+            padding: '10px',
+            transition: '.2s linear',
+            border: '2.5px solid black',
+            fontSize: '14px',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
+            outline: 'none',
+          }}
+          onKeyPress={handleKeyPress}
+        />
+        <span
+          className="icon"
+          style={{
+            position: 'absolute',
+            right: '10px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            animation: 'anim 1s linear infinite',
+          }}
+        >
+          <img
+            src={search}
+            alt="Search Icon"
+            onClick={clicked}
+            style={{ width: '19px', height: '19px', cursor: 'pointer' }}
+          />
+        </span>
+      </div>
+    </div>
+  );
+};
 
-              <input ref={artist} className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button onClick={clicked} className="btn btn-outline-success" type="submit">Search</button>
-        
-      </nav>      
-      
-      {/* <input ref={artist} type='text' placeholder='Type to Search Here'/>
-
-      <Button onClick={clicked} variant="contained">Search</Button> */}
-      
-      </>
-  )
-}
-
-export default Search
+export default Search;
