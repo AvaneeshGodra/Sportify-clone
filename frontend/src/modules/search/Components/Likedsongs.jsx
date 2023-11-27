@@ -6,6 +6,9 @@ import { Link, Route, Router, Routes } from 'react-router-dom';
 import { networkOperations } from '../../../shared/services/api-client';
 
 const Likedsongs = ({ s }) => {
+  
+
+
   const unlike=async()=>{
     const email=localStorage.getItem("email");
     const userInfo = {
@@ -14,7 +17,7 @@ const Likedsongs = ({ s }) => {
     };
     try {
       const response = await networkOperations.post(
-        "http://localhost:1234/removelike",
+       process.env.REACT_APP_REMOVELIKE,
         userInfo
       ); //backend
        
@@ -55,8 +58,10 @@ const Likedsongs = ({ s }) => {
  
           </div>
           <div className="col-4">
+            <Link to='/'>
             
             <Button color="error" className='mt-5' onClick={unlike} variant="contained">UN LIKE</Button>
+            </Link>
           </div>
         </div>
       </div>

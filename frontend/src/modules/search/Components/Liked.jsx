@@ -16,7 +16,7 @@ const Liked = () => {
     };
     try {
       const response = await networkOperations.post(
-        "http://localhost:1234/getlikedsongs",
+        process.env.REACT_APP_GETLIKE,
         userInfo
       ); //backend
        

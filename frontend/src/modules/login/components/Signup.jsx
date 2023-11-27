@@ -6,7 +6,7 @@ import { networkOperations } from '../../../shared/services/api-client';
 import { useEffect } from 'react';
 import Swal from 'sweetalert2'
 import { Button } from '@mui/material';
-
+import { Link } from 'react-router-dom';
 const Signup = () => {
   const [message,setMessage]=useState('');
   
@@ -156,7 +156,11 @@ return (
           <Button onClick={Register} variant="contained" fullWidth> REGISTER </Button>
           </div>
           <div id="forgot-pass">
-            <a href="login">Already have an account ?</a>
+            {/* <a href="login">Already have an account ?</a> */}
+            <Link to ='/login'>
+              <h6>Already have an account ?</h6>
+                  {/* <Button color='info' variant="contained" fullWidth> Already have an account ? </Button> */}
+                  </Link>
           </div>
           
         </div>

@@ -10,7 +10,7 @@ import SearchPage from '../../search/pages/SearchPage.jsx'
 import Firstpagerouts from '../../../routes/Firstpagerouts.jsx';
 import { useNavigate } from 'react-router-dom';
 import './login.css'
-
+import { Link } from 'react-router-dom';
 
 
 export const Login = () => {
@@ -89,7 +89,11 @@ export const Login = () => {
                 <Button onClick={submit} variant="contained" fullWidth> Login </Button>
                 </div>
                 <div id="forgot-pass">
-                  <a href="signup">Creat an account</a>
+                  {/* <a href="/signup">Create an account</a> */}
+                  <Link to ='/signup'>
+                  <h6>create an account</h6>
+                  </Link>
+                  
                 </div>
                 
               </div>

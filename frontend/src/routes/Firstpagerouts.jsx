@@ -11,10 +11,10 @@ const Firstpagerouts = () => {
         <Router>
         <Routes>
           <Route path="/" element={<SearchPage/>}/>
-            <Route path="login" element= {<Login/>}/>
+            <Route path="/login" element= {<Login/>}/>
          
               <Route path="liked" element= {<Liked/>}/>
-            <Route path="/signup" element= {<Signup/>}/>
+            <Route path="signup" element= {<Signup/>}/>
             
          
         </Routes>

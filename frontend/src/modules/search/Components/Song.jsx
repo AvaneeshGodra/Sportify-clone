@@ -24,7 +24,7 @@ const Song = ({fn,song}) => {
 
     try {
       const response = await networkOperations.post(
-        "http://localhost:1234/liked",
+        process.env.REACT_APP_LIKE,
         userInfo
       ); //backend
       setMessage(response.data.message)
@@ -47,6 +47,7 @@ const Song = ({fn,song}) => {
     else{
       Swal.fire('failed!','song already added to liked','error');
     }
+    setMessage('');
 },[like])
 
   const cardStyle = {

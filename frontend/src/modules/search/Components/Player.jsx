@@ -84,55 +84,47 @@ export default function Player({fn,song}) {
   const lightIconColor =
     theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)';
   return (
-   <>
-   
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <Box sx={{ width: '100%', overflow: 'hidden' }}>
-      <Widget>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <CoverImage>
-          <img src={song.artworkUrl100}/>
-          </CoverImage>
-          <Box sx={{ ml: 1.5, minWidth: 0 }}>
-            <Typography variant="caption" color="text.secondary" fontWeight={500}>
-             {song.artistName}
-            </Typography>
-            <Typography variant="caption" color="text.secondary" fontWeight={500}>
-             {song.trackName}
-            </Typography>
-            
-            
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh', // 100% of the viewport height
+      }}
+    >
+      <Box
+        sx={{
+          width: '100%',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Widget>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <CoverImage>
+              <img src={song.artworkUrl100} alt="Artwork" />
+            </CoverImage>
+            <Box sx={{ ml: 1.5, minWidth: 0 }}>
+              <Typography variant="caption" color="text.secondary" fontWeight={500}>
+                {song.artistName}
+              </Typography>
+              <Typography variant="caption" color="text.secondary" fontWeight={500}>
+                {song.trackName}
+              </Typography>
+            </Box>
           </Box>
-        </Box>
-       
-        <Box>
-          
-        </Box>
-        <Box>
-          
-          
-        </Box>
-        <div alignItems='center' className='mt-2'>
+          <div alignItems='center' className='mt-2'>
             <audio controls>
-                <source src={song?.previewUrl} type="audio/mp4"/>
-                Your browser does not support the audio element
+              <source src={song?.previewUrl} type="audio/mp4"/>
+              Your browser does not support the audio element
             </audio>
-            </div>
-            <Button onClick={()=>{
-                fn(false,null)
-            }}variant="contained">Back</Button>
-      </Widget>
-      <WallPaper />
-    </Box>
-  </>
+          </div>
+          <Button onClick={() => { fn(false, null) }} variant="contained">Back</Button>
+        </Widget>
+        {/* Assuming WallPaper is another component */}
+        <WallPaper />
+      </Box>
+    </div>
   )}
