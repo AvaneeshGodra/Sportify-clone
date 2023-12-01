@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 
 const Song = ({fn,song}) => {
   const [message,setMessage]=useState('')
-
+ 
   const showPlayer=()=>{
     fn(true,song);
   }
@@ -18,10 +18,11 @@ const Song = ({fn,song}) => {
       email: email,
       artistName: song.artistName,
       songNmae: song.trackName,
-      image: song.artworkUrl100
+      image: song.artworkUrl100,
+      previewUrl: song.previewUrl
 
     };
-
+  
     try {
       const response = await networkOperations.post(
         process.env.REACT_APP_LIKE,
@@ -43,6 +44,9 @@ const Song = ({fn,song}) => {
       }
       else if(message==''){
       
+      }
+      else if(message=='Error adding the liked song'){
+        Swal.fire('failed!','Error adding song','error');
       }
     else{
       Swal.fire('failed!','song already added to liked','error');

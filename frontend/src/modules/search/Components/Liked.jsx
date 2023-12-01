@@ -31,7 +31,7 @@ const Liked = () => {
         getsongs();
   
     },[])
-   console.log(songs);
+   
     
   return (
     <>

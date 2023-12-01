@@ -31,7 +31,7 @@ export const Login = () => {
         process.env.REACT_APP_LOGIN,
         userInfo
       ); //backend
-      console.log(response);
+      
       setMessage(response.data.message);
 
       if (response.data.message == "invalid userid or password") {
